@@ -1,6 +1,6 @@
 const Breadcrumb = () => {
     return (
-            <ul className="flex flex-row w-fit pl-60 py-6 gap-5 text-gray-700">
+            <ul className="flex flex-row w-fit py-6 gap-5 text-gray-700">
                 <li>
                     <a href="/home">Inicio</a>
                 </li>
