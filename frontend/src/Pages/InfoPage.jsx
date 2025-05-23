@@ -20,21 +20,32 @@ const InfoPage = () => {
         if (!isNaN(value) && value > 0) setCantidad(value);
     };
 
+    const handleAddToCart = () => {
+        // Aquí puedes agregar la lógica para agregar el producto al carrito
+        console.log(`Agregado ${cantidad} unidades al carrito`);
+    };
+
+    const handleAddToCartNow = () => {
+        // Aquí puedes agregar la lógica para comprar el producto ahora
+        console.log(`Comprando ${cantidad} unidades ahora`);
+    }
+
     return (
         <div className="info-page">
             <div className="max-w-7xl mx-auto">
                 <Breadcrumb />
 
-                <div className="grid grid-cols-2 justify-items-center gap-10 mb-10 ">
+                <div className="grid grid-cols-2 justify-items-center gap-10 mb-10">
                     <div className="bg-amber-200 w-full ">
                         {" "}
                         <p>asdasd 1</p>
                     </div>
-                    <div className="bg-gray-200 w-full px-4">
-                        <div className="m-5">
-                            <p className="text-2xl">NOMBRE DEL PRODUCTO</p>
-                            <p className="text-xl ">MARCA DEL PRODUCTO</p>
-
+                    <div className="bg-gray-200 w-full p-5">
+                        <div className="space-y-5 py-3">
+                            <div>
+                                <p className="text-2xl">NOMBRE DEL PRODUCTO</p>
+                                <p className="text-xl ">MARCA DEL PRODUCTO</p>
+                            </div>
                             <div className="flex justify-between">
                                 <div className="flex gap-1">
                                     <div>
@@ -44,20 +55,20 @@ const InfoPage = () => {
                                     </div>
                                     <span>Reseña</span>
                                 </div>
-                                <div className="flex gap-0.5">
-                                    <FaFacebook />
-                                    <FaPinterest />
-                                    <FaSquareXTwitter />
-                                    <MdOutgoingMail />
+                                <div className="flex gap-0.5 text-2xl ">
+                                    <FaFacebook className="hover:bg-red-500" />
+                                    <FaPinterest className="hover:bg-red-500" />
+                                    <FaSquareXTwitter className="hover:bg-red-500" />
+                                    <MdOutgoingMail className="hover:bg-red-500" />
                                 </div>
                             </div>
                         </div>
-                        <div className="border-t-2 border-black-300 gap-5">
-                            <div  className="m-5">
+                        <div className="border-t-2 border-black-300 gap-5 py-5 space-y-5">
+                            <div>
                                 Precio:{" "}
                                 <span className="text-2xl">$100.00</span>
                             </div>
-                            <div className="flex items-center m-5 gap-5">
+                            <div className="flex items-center  gap-5">
                                 <label>Cantidad:</label>
                                 <div className="flex items-center">
                                     <button
@@ -82,7 +93,25 @@ const InfoPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div></div>
+                        <div className="grid grid-cols-2 row-span-1 gap-5 justify-around w-full py-5">
+                            <div>
+                                <button
+                                    type="button"
+                                    onClick={handleAddToCart}
+                                    className="bg-blue-400 hover:bg-blue-500 w-full cursor-pointer h-10"
+                                >
+                                    Agregar al carrito
+                                </button>
+                            </div>
+                            <div>
+                                <button 
+                                type="button"
+                                onClick={handleAddToCartNow}
+                                className="bg-red-400 hover:bg-red-500 w-full  cursor-pointer h-10">
+                                    Comprar ahora
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
